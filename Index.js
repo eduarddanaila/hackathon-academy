@@ -5,13 +5,11 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json())
 
-const carsRoutes = require('./Cars.js')
-app.use(carsRoutes);
+const carRoutes = require('./routes/Cars.js')
+app.use(carRoutes);
 
 
 app.get('/', (req, res) => res.send('Hello World!'));
-
-
 
 
 

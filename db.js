@@ -4,7 +4,7 @@ mongoose.connect('mongodb://localhost:27017/', {
     useNewUrlParser: true
 }).then(() => console.log('Connected to MongoDB')).catch(err => console.error(err))
 
-const carsSchema = new mongoose.Schema({
+const carSchema = new mongoose.Schema({
     'Manufacturer': {
         type: String,
         require: true
@@ -23,5 +23,5 @@ const carsSchema = new mongoose.Schema({
     }
 })
 
-const carsModel = mongoose.model('cars', carsSchema);
-module.exports = { carsModel }
+const carModel = mongoose.model('car', carSchema);
+module.exports = { carModel }
