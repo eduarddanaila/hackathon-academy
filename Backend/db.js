@@ -1,27 +1,28 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/', {
+mongoose.connect('mongodb://localhost:27017/hackathon', {
     useNewUrlParser: true
 }).then(() => console.log('Connected to MongoDB')).catch(err => console.error(err))
 
 const carSchema = new mongoose.Schema({
-    'Manufacturer': {
+    manufacturer: {
         type: String,
         require: true
     },
-    'Model': {
+    model: {
         type: String,
         require: true
     },
-    'Engine': {
+    engine: {
         type: String,
         require: true
     },
-    'Power': {
+    power: {
         type: String,
         require: true
     }
 });
 
 const carModel = mongoose.model('car', carSchema);
-module.exports = { carModel }
+
+module.exports = carModel 

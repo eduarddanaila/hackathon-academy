@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const Car = require('../db.js');
+const carModel = require('../db.js');
 
 router.get('/getAllCars', (req, res) => {
     Car.find()
@@ -20,8 +20,8 @@ router.get('/getCar/:id', (req, res) => {
 
 router.post('/createCar', async (req, res, next) => {
     try {
-      const newCar = await Car.create(req.body);
-      return res.status(201).json(newCar);
+      const result = await carModel.create(req.body);
+      return res.status(201).send(result);
     } catch (err) {
       return next(err);
     }

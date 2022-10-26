@@ -34,19 +34,19 @@ class App extends Component {
         </header>
 
         <Link to="/create-car" className="nav-link">
-        <button type="button">CreateCar</button>
+        Create New Car
         </Link>
 
         <Routes>
           
 
-            <Route exact path='/' component={ShowCarList} />
+            <Route exact path='/' element={<ShowCarList />} />
 
-            <Route path='/create-car' component={CreateCar} />
+            <Route path='/create-car' element={<CreateCar/>} />
 
-            <Route path='/edit-car/:id' component={UpdateCarInfo} />
+            <Route path='/edit-car/:id' element={<UpdateCarInfo />} />
 
-            <Route path='/show-car/:id' component={ShowCarDetails} />
+            <Route path='/show-car/:id' element={<ShowCarDetails />} />
 
         
         </Routes>
