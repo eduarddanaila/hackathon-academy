@@ -12,9 +12,15 @@ function ShowCars() {
     useEffect(() => { getCars(); });
 
     const handleDelete = (id) => {
-        // axios.delete
+        axios.delete('http://localhost:4193/Cars/deleteCar/'+id,
+    )
+    .then((response) => {
+        return response.data;
+    })
+    .catch((err) => console.log(err.message));
         console.log("ID:", id);
     }
+    
     return (
         <>
             {cars.map(({ _id, manufacturer, model, engine, power }) => (

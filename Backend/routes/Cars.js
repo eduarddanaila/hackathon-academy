@@ -11,7 +11,6 @@ router.get('/getAllCars', async (req, res) => {
     }
 });
 
-
 router.get('/getCar/:id', (req, res) => {
     carModel.findById(req.params.id)
         .then(car => res.json(car))
@@ -26,7 +25,6 @@ router.post('/createCar', async (req, res, next) => {
       return next(err);
     }
   });
-
 
 router.put('/modifyCar/:id', (req, res) => {
     carModel.findByIdAndUpdate(req.params.id, req.body)

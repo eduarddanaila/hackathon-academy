@@ -13,7 +13,6 @@ import './App.css';
 
 import CreateCar from './Components/CreateCar';
 import ShowCars from './Components/ShowCars';
-import DeleteCar from './Components/DeleteCar';
 import UpdateCar from './Components/UpdateCar';
 import Home from './Components/Home';
 
@@ -29,28 +28,30 @@ class App extends Component {
           <h1>Car Generator</h1>
         </header>
 
-        <Link to='/Home' className='nav-link'>
+        <Link to='/Home' >
           Home
         </Link>
-
-        <Link to='/show-cars' className='nav-link'>
+        <br />
+        <Link to='/show-cars'>
           Show Cars
         </Link>
-
-        <Link to="/create-car" className="nav-link">
-        Create New Car
+        <br />
+        <Link to="/create-car">
+          Create New Car
         </Link>
 
+        <br />
+        <Link to="/update-car">
+          Edit Car Details
+        </Link>
+
+
         <Routes>
-          
-
-            <Route path='/home' element={<Home />} />
-            <Route path='/show-cars' element={<ShowCars />}/>
-            <Route path='/create-car' element={<CreateCar/>} />
-            {/* <Route path='/update-car/:id' element={<UpdateCar />} />
-            <Route path='/delete-car/:id' element={<DeleteCar />} /> */}
-
-        
+          <Route path='/Home' element={<Home />} />
+          <Route path='/show-cars' element={<ShowCars />} />
+          <Route path='/create-car' element={<CreateCar />} />
+          <Route path='/update-car' element={<UpdateCar />} />
+            
         </Routes>
 
       </Router>
@@ -58,5 +59,5 @@ class App extends Component {
     )
   }
 }
-  
+
 export default App;
