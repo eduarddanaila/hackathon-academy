@@ -10,11 +10,13 @@ router.get('/getAllCars', async (req, res) => {
       return next(err);
     }
 });
-// router.get('/getCar/:id', (req, res) => {
-//     Car.findById(req.params.id)
-//         .then(car => res.json(car))
-//         .catch(err => res.status(404).json({ nocarfound: 'No car found' }));
-// });
+
+
+router.get('/getCar/:id', (req, res) => {
+    carModel.findById(req.params.id)
+        .then(car => res.json(car))
+        .catch(err => res.status(404).json({ nocarfound: 'No car found' }));
+});
 
 router.post('/createCar', async (req, res, next) => {
     try {
@@ -26,14 +28,15 @@ router.post('/createCar', async (req, res, next) => {
   });
 
 
-// router.put('/modifyCar/:id', (req, res) => {
-//     Car.findByIdAndUpdate(req.params.id, req.body)
-//         .then(car => res.json({ msg: 'Updated successfully' }))
-//         .catch(err => res.status(400).json({ error: 'Unable to update the Database' }))
-// });
-// router.delete('/deleteCar/:id', (req, res) => {
-//     Car.findByIdAndRemove(req.params.id, req.body)
-//         .then(car => res.json({ msg: 'Car deleted successfully' }))
-//         .catch(err => res.status(404).json({ error: 'No such car' }))
-// });
+router.put('/modifyCar/:id', (req, res) => {
+    carModel.findByIdAndUpdate(req.params.id, req.body)
+        .then(car => res.json({ msg: 'Updated successfully' }))
+        .catch(err => res.status(400).json({ error: 'Unable to update the Database' }))
+});
+
+router.delete('/deleteCar/:id', (req, res) => {
+    carModel.findByIdAndRemove(req.params.id)
+        .then(car => res.json({ msg: 'Car deleted successfully' }))
+        .catch(err => res.status(404).json({ error: 'No such car' }))
+});
 module.exports = router;

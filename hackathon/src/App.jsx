@@ -13,8 +13,8 @@ import './App.css';
 
 import CreateCar from './Components/CreateCar';
 import ShowCars from './Components/ShowCars';
-import ShowCarDetails from './Components/ShowCarDetails';
-import UpdateCarInfo from './Components/UpdateCarInfo';
+import DeleteCar from './Components/DeleteCar';
+import UpdateCar from './Components/UpdateCar';
 import Home from './Components/Home';
 
 
@@ -47,8 +47,8 @@ class App extends Component {
             <Route path='/home' element={<Home />} />
             <Route path='/show-cars' element={<ShowCars />}/>
             <Route path='/create-car' element={<CreateCar/>} />
-            <Route path='/edit-car/:id' element={<UpdateCarInfo />} />
-            <Route path='/show-car/:id' element={<ShowCarDetails />} />
+            {/* <Route path='/update-car/:id' element={<UpdateCar />} />
+            <Route path='/delete-car/:id' element={<DeleteCar />} /> */}
 
         
         </Routes>
