@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 function ShowCars() {
     const [cars, setCars] = useState([]);
@@ -23,31 +24,27 @@ function ShowCars() {
             .catch((err) => console.log(err.message));
         console.log("ID:", id);
     }
-
-    // const handleUpdate = (e, { id }) => {
-    //     e.preventDefault();
-    //     axios.put('http://localhost:4193/Cars/modifyCar/' + id,)
-    //         .then((response) => {
-    //             return response.data;
-    //         })
-    //         .catch((err) => console.log(err.message));
-    //     console.log("ID:", id);
-    // }
-    return (
+return (
         <>
+        <Card style={{ width: '18rem'}}>
+        <Card.Body>
+          <Card.Title>Car Details</Card.Title>
+          <Card.Text>
             {cars.map(({ _id, manufacturer, model, engine, power }) => (
                 <div key={_id}>
                     <p>{manufacturer}</p>
                     <p>{model}</p>
                     <p>{engine}</p>
                     <p>{power}</p>
-                    <button onClick={() => handleDelete(_id)}>Delete Car</button>
-                    {/* <button onClick={() => handleUpdate(_id)}>UPDATE</button> */}
-                <button onClick={() => {
+                    <Button onClick={() => handleDelete(_id)}>Delete Car</Button>
+                    <Button onClick={() => {
                     navigate('/update-car/' + _id);
-                }}>Modify Car</button>
+                }}>Modify Car</Button>
                 </div>
             ))}
+            </Card.Text>
+        </Card.Body>
+      </Card>
         </>
     );
 }
