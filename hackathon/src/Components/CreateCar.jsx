@@ -22,25 +22,25 @@ function CreateCar() {
       <form onSubmit={handleSubmit}>
         <label htmlFor="manufacturer">
           Manufacturer:
-          <input type="text" onChange={e => setManufacturer(e.target.value)} />
+          <input type="text" value={manufacturer} onChange={e => setManufacturer(e.target.value)} />
         </label>
         <br />
         <label htmlFor="model">
           Model:
-          <input type="text" onChange={e => setModel(e.target.value)} />
+          <input type="text" value={model} onChange={e => setModel(e.target.value)} />
         </label>
         <br />
         <label htmlFor="engine">
           Engine:
-          <input type="text" onChange={e => setEngine(e.target.value)} required />
+          <input type="text" value={engine} onChange={e => setEngine(e.target.value)} required />
         </label>
         <br />
         <label htmlFor="power">
           Power:
-          <input type="text" onChange={e => setPower(e.target.value)} required />
+          <input type="text" value={power} onChange={e => setPower(e.target.value)} required />
         </label>
         <br />
-        <button type="submit">CREATE</button>
+        <button Variant="Primary" type="submit">CREATE</button>
       </form>
     </div>
   );

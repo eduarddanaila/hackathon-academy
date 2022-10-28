@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import CreateCar from './CreateCar.jsx'
+
 
 function ShowCars() {
     const [cars, setCars] = useState([]);
@@ -44,8 +44,7 @@ function ShowCars() {
                     <button onClick={() => handleDelete(_id)}>Delete Car</button>
                     {/* <button onClick={() => handleUpdate(_id)}>UPDATE</button> */}
                 <button onClick={() => {
-                    CreateCar({ _id, manufacturer, model, engine, power });
-                    navigate('/Cars/updateCar');
+                    navigate('/update-car/' + _id);
                 }}>Modify Car</button>
                 </div>
             ))}

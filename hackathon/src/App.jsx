@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import './App.css';
-
+import {useState} from  'react'
 // import {
 //   Col, Container, Nav, Row,
 // } from 'react-bootstrap';
@@ -18,9 +18,8 @@ import Home from './Components/Home';
 
 
 
-class App extends Component {
-  render() {
-
+function App() {
+  ;
     return (
 
       <Router>
@@ -48,7 +47,7 @@ class App extends Component {
           <Route path='/Home' element={<Home />} />
           <Route path='/show-cars' element={<ShowCars />} />
           <Route path='/create-car' element={<CreateCar />} />
-          <Route path='/update-car' element={<UpdateCar />} />
+          <Route path='/update-car/:id' element={<UpdateCar />} />
 
         </Routes>
 
@@ -56,6 +55,6 @@ class App extends Component {
 
     )
   }
-}
+
 
 export default App;
