@@ -27,22 +27,20 @@ class App extends Component {
         <header>
           <h1>Car Generator</h1>
         </header>
-
-        <Link to='/Home' >
-          Home
-        </Link>
+      
+          <Link to='/Home' >
+            Home
+          </Link>
+      
         <br />
-        <Link to='/show-cars'>
-          Show Cars
-        </Link>
+      
+          <Link to='/show-cars'>
+            Show Cars
+          </Link>
+      
         <br />
         <Link to="/create-car">
           Create New Car
-        </Link>
-
-        <br />
-        <Link to="/update-car">
-          Edit Car Details
         </Link>
 
 
@@ -51,7 +49,7 @@ class App extends Component {
           <Route path='/show-cars' element={<ShowCars />} />
           <Route path='/create-car' element={<CreateCar />} />
           <Route path='/update-car' element={<UpdateCar />} />
-            
+
         </Routes>
 
       </Router>
