@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
+import ListGroup from 'react-bootstrap/ListGroup'
 
 function ShowCars() {
     const [cars, setCars] = useState([]);
@@ -28,20 +29,32 @@ return (
         <>
         <Card style={{ width: '18rem'}}>
         <Card.Body>
-          <Card.Title>Car Details</Card.Title>
+          <Card.Title>All Cars</Card.Title>
           <Card.Text>
+          <ListGroup>
             {cars.map(({ _id, manufacturer, model, engine, power }) => (
                 <div key={_id}>
-                    <p>{manufacturer}</p>
-                    <p>{model}</p>
-                    <p>{engine}</p>
-                    <p>{power}</p>
+                    <ListGroup.Item>
+                   {manufacturer}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                    {model}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                    {engine}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                    {power}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
                     <Button onClick={() => handleDelete(_id)}>Delete Car</Button>
                     <Button onClick={() => {
                     navigate('/update-car/' + _id);
                 }}>Modify Car</Button>
+                </ListGroup.Item>
                 </div>
             ))}
+            </ListGroup>
             </Card.Text>
         </Card.Body>
       </Card>
